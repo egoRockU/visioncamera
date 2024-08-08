@@ -33,7 +33,12 @@
     },
     "plugins": [
       "react-native-vision-camera",
-      "react-native-fast-tflite"
+      [
+        "react-native-fast-tflite",
+        {
+          "enableCoreMLDelegate": true
+        }
+      ]
     ]
   }
 }
