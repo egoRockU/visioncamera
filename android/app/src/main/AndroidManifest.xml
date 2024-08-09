@@ -29,5 +29,11 @@
       </intent-filter>
     </activity>
     <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" android:exported="false"/>
+
+    <uses-native-library android:name="libOpenCL.so" android:required="false" />
+
+    <uses-native-library android:name="libOpenCL-pixel.so" android:required="false" />
+    <uses-native-library android:name="libGLES_mali.so" android:required="false" />
+    <uses-native-library android:name="libPVROCL.so" android:required="false" />
   </application>
 </manifest>
