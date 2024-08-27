@@ -38,7 +38,7 @@ export default function CameraSnap() {
 
   const snap = async() => {
     const startTime = performance.now();
-    
+
     const photo = await cameraRef.current.takePictureAsync();
     const inputTensor = await imageToTensor(photo.uri);
     const outputs = model.model.runSync([inputTensor]);
@@ -55,18 +55,6 @@ export default function CameraSnap() {
     } else {
       console.log(`No face detected, Score: ${scores[0]}`)
     }
-
-    // let count = 0;
-    // for (let i=0; i < num[0]; i++){
-    //   if (scores[i] > 0.8){
-    //     count++;
-    //     console.log(`Face Detected! ${i}, Class: ${classification[classes[i]]}`);
-    //   }
-    // };
-    // if (count === 0) {
-    //   console.log('No face detected')
-    // };    
-    // // console.log('------------------');
 
     const endTime = performance.now();
     const duration = (endTime - startTime) / 1000;
